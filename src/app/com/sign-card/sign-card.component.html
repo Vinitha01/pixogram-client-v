@@ -1,0 +1,12 @@
+<div class="card text-center secondary-shadow">
+    <img src="../../assets/images/sunset.jpg" class="card-img-top" alt="">
+    <div class="card-body">
+        <h5 class="card-title">Account Action</h5>
+        <p class="card-text">
+            <a routerLink="/register" class="btn btn-light">Register</a>
+        </p>
+        <small *ngIf="invalidLogin" class="ml-3 text-danger">
+            New to PixoGram, <a routerLink="/register" role="button" class="text-success">Register</a> here...
+        </small>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<header class="primary-shadow">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <h1>Pixogram</h1>
+        </a>
+        <div>
+            <a routerLink="/account-details" *ngIf="invalidLogin" role="button" class="btn btn-outline-light">Account</a>
+            <a *ngIf="invalidLogin" role="button" class="btn btn-outline-light" (click) = "logout()">Logout</a>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,39 @@
+<form (ngSubmit)="upload()">
+    <div class="row mt-2">
+        <div class="col">
+            <div class="text-center">
+                <img *ngIf="!imgURL" width="100%" height="350px">
+                <img class="img-fluid" [src]="imgURL" *ngIf="imgURL" height="250px">
+                <div *ngIf="!imgURL" class="image-text-centered lead">Drop image here</div>
+                <div class="text-danger lead" *ngIf="message">{{message}}</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="currentFileUpload" class="progress mt-2">
+        <div class="progress-bar progress-bar-info progress-bar-striped bg-primary" role="progressbar"
+            attr.aria-valuenow="{{progress.percentage}}" aria-valuemin="0" aria-valuemax="100"
+            [ngStyle]="{width:progress.percentage+'%'}">
+            {{progress.percentage}}%</div>
+    </div>
+    <hr>
+    <div class="card-text d-flex mb-2">
+        <label class="btn btn-light m-1 form-control">
+            <input type="file" (change)="selectFile($event)" />
+            Browse
+        </label>
+        <button type="submit" class="btn btn-light m-1 form-control" [disabled]="!selectedFiles">Upload</button>
+    </div>
+    <div class="form-group row">
+        <label for="title" class="col-3 col-form-label">Title</label>
+        <div class="col-9">
+            <input [(ngModel)]="title" type="text" class="form-control" name="title" id="title" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="tags" class="col-3 col-form-label">Caption</label>
+        <div class="col-9">
+            <input [(ngModel)]="tags" type="text" class="form-control" name="tags" id="tags" required>
+        </div>
+    </div>
+    <hr>
+</form>

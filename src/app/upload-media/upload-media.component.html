@@ -1,0 +1,37 @@
+<app-header [invalidLogin]="true"></app-header>
+
+<section class="container">
+    <div class="row m-4">
+        <div class="col-lg-4 mt-2">
+            <div class="sticky-top">
+                <app-user-card></app-user-card>
+                <div class="card text-center secondary-shadow mt-2">
+                    <!-- <img src="./i mages/user.png" class="card-img-top" alt=""> -->
+                    <div class="card-body">
+                        <p class="card-text d-flex flex-md-column flex-sm-row">
+                            <a routerLink="/upload-media" class="btn btn-info">Upload</a>
+                            <a routerLink="/my-media-page" class="btn btn-light m-1 form-control">My Media</a>
+                            <a routerLink="/account-details/follow" class="btn btn-info">Followers</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="card text-center secondary-shadow mt-2">
+                    <!-- <img src="./images/user.png" class="card-img-top" alt=""> -->
+                    <div class="card-body">
+                        <p class="card-text d-flex flex-md-column flex-sm-row">
+                            <a routerLink="/upload-media/single-media" class="btn btn-info">Single
+                                Media</a>
+                            <a routerLink="/upload-media/multiple-media" class="btn btn-light m-1 form-control">Multiple
+                                Media</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 mt-2">
+            <div class="secondary-shadow bg-light p-4">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</section>
